@@ -9,8 +9,7 @@ register('all_js',
         output='cache/packed.js')
 
 register('libs_js',
-        Bundle('js/libs/jquery.qtip.min.js',
-               'js/libs/jquery.uniform.min.js',),
+        Bundle('js/libs/jquery.uniform.min.js',),
         filter='jsmin',
         output='cache/packed.libs.js')
 
@@ -19,6 +18,7 @@ register('all_css',
         Bundle('css/base.css',
                'css/form.css',
                'css/uniform.css',
-               'css/style.css',),
+               'css/style.css',
+               'css/humanmsg.css',),
         filter='yui_css',
         output='cache/packed.css')
