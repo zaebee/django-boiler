@@ -4,81 +4,84 @@
 <!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
 <!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]--><head>
-	<meta charset="UTF-8">
-    {% load assets %}
+	<meta charset="UTF-8" />
+  {% load assets %}
 	
-    <title>Title of your site! | {% block title %}{% endblock %}</title>
-	
-    {% block metadata %}
+  <title>Сайт нашей компании | {% block title %}{% endblock %}</title>
+
+  {% block metadata %}
     <meta name="description" content="{% block description %}{% endblock %}" />
     <meta name="keywords" content="{% block keywords %}{% endblock %}" />
-    {% endblock metadata %}
+  {% endblock metadata %}
 
-    <meta name="zaebee" content="" />
+  <meta name="author" content="zaebee" />
 
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	
-    {% block favicons %}
-    <link rel="shortcut icon" href="{{ MEDIA_URL }}favicon.ico">
-    <link rel="apple-touch-icon" href="{{ MEDIA_URL }}apple-touch-icon.png">
-    {% endblock favicons %}
+  {% block favicons %}
+    <link rel="shortcut icon" href="{{ STATIC_URL }}favicon.ico">
+    <link rel="apple-touch-icon" href="{{ STATIC_URL }}apple-touch-icon.png">
+  {% endblock favicons %}
 	
-    {% assets "all_css" %}
+  {% assets "all_css" %}
     <style type="text/css" media="screen">
         /* <![CDATA[ */
         @import '{{ ASSET_URL }}';
         /* ]]> */
     </style>
-    {% endassets %}
-    {% block extracss %}{% endblock extracss %}
+  {% endassets %}
 
-    <script src="{{ MEDIA_URL }}js/libs/modernizr-1.6.min.js"></script>
+  {% block extracss %}{% endblock extracss %}
+
+  <script src="{{ STATIC_URL }}js/libs/modernizr-2.0.min.js"></script>
 </head>
 <body>
-{% spaceless %}
+  {% spaceless %}
     <div id="header-container">
-		<header class="wrapper">
-			<h1 id="title">Site title</h1>
-			<nav id="main-nav">
-                {% include 'include/main_nav.html' %}
-			</nav>
-		</header>
+      <header class="wrapper">
+        <h1 id="title">Site title</h1>
+        <nav id="main-nav">
+          {% include 'include/main_nav.html' %}
+        </nav>
+      </header>
     </div>
-	<div id="main" class="wrapper">
-		<aside>
-			<h3>Something aside</h3>
-            {% block sidebar %}{% endblock %}
-		</aside>
-		<article>
-            {% block content %}{% endblock %}
-		</article>
-	</div>
-	<div id="footer-container">
-		<footer class="wrapper">
-			<h3>A nice footer</h3>
-		</footer>
-	</div>
+
+    <div id="main" class="wrapper">
+      <aside>
+        <h3>Something aside</h3>
+        {% block sidebar %}{% endblock %}
+      </aside>
+    
+      <article>
+        {% block content %}{% endblock %}
+      </article>
+    </div>
+
+    <div id="footer-container">
+      <footer class="wrapper">
+        <h3>A nice footer</h3>
+      </footer>
+    </div>
 
     {% block js-libs %}
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
-	<script>!window.jQuery && document.write(unescape('%3Cscript src="{{ MEDIA_URL }}js/libs/jquery-1.5.min.js"%3E%3C/script%3E'))</script>
-    <script src="http://cdn.jquerytools.org/1.2.5/all/jquery.tools.min.js"></script>
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+      <script>!window.jQuery && document.write(unescape('%3Cscript src="{{ STATIC_URL }}js/libs/jquery-1.7.1.min.js"%3E%3C/script%3E'))</script>
     {% endblock js-libs %}
 
     {% assets  "all_js" %}
-    <script type="text/javascript" language="javascript" src="{{ ASSET_URL }}" charset="utf-8">
-        // <![CDATA[// ]]>
-    </script>
+      <script type="text/javascript" language="javascript" src="{{ ASSET_URL }}" charset="utf-8">
+          // <![CDATA[// ]]>
+      </script>
     {% endassets %}
-    <script type="text/javascript" src="{{ MEDIA_URL }}js/libs/jquery.uniform.min.js"></script>
+
     {% block extrajs %}{% endblock extrajs %}
 
-	<!--[if lt IE 7 ]>
-	<script src="{{ MEDIA_URL }}js/libs/dd_belatedpng.js"></script>
-	<script> DD_belatedPNG.fix('img, .png_bg');</script>
+    <!--[if lt IE 7 ]>
+      <script src="{{ STATIC_URL }}js/libs/dd_belatedpng.js"></script>
+      <script> DD_belatedPNG.fix('img, .png_bg');</script>
     <![endif]-->
 
-{% endspaceless %}
+  {% endspaceless %}
 </body>
 </html>
