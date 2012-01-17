@@ -1,4 +1,4 @@
-import os, sys
+import sys
 from settings import MIDDLEWARE_CLASSES, INSTALLED_APPS, PROJECT_PATH
 
 sys.path.insert(0, PROJECT_PATH + '/apps')

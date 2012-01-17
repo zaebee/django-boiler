@@ -1,1 +1,0 @@
-python manage.py dumpdata job catalog zinnia pdf shop contacts > fixtures/dump.json
