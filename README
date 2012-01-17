@@ -18,4 +18,4 @@ django-taggit==0.9.3
 django-template-repl==0.3.0
 jsmin==2.0.2
 sorl-thumbnail==11.05.2
-webassets==0.5
+webassets==0.6
