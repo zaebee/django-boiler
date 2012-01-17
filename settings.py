@@ -11,7 +11,7 @@ def rel(*x):
 
 sys.path.insert(0, rel('apps'))
 
-DEBUG = False
+DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 DEFAULT_CHARSET = 'utf-8'
 
@@ -35,6 +35,17 @@ STATIC_URL = '/static/'
 MEDIA_ROOT = rel('/media/')
 MEDIA_URL = '/media/'
 ADMIN_MEDIA_PREFIX = '/static/admin/'
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': rel('dev.db'),
+        'USER': '',
+        'PASSWORD': '',
+        'HOST': '',
+        'PORT': '',
+    }
+}
 
 TEMPLATE_DIRS = (
     rel('templates')

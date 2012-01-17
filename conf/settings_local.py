@@ -1,7 +1,9 @@
+#DEBUG = False
+
 DATABASES = {
-    'chikago': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': '',
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'dev.db',
         'USER': '',
         'PASSWORD': '',
         'HOST': '',

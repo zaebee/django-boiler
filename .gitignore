@@ -1,5 +1,6 @@
 logs/*
 tmp/*
+.env
 *.pyc
 *.pyo
 *.db
