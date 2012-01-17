@@ -2,6 +2,8 @@
 import os
 import sys
 
+from genericpath import isfile
+
 ugettext = lambda s: s
 
 def rel(*x):
@@ -102,4 +104,8 @@ ADMIN_TOOLS_INDEX_DASHBOARD = 'conf.dashboard.CustomIndexDashboard'
 
 DEFAULT_FROM_EMAIL = 'no-reply@zaebee.ru'
 
-from conf.run import *
+
+if isfile(rel('conf/settings_local.py')):
+    from conf.settings_local import *
+if isfile(rel('conf/local_settings.py')):
+    from conf.local_settings import *
