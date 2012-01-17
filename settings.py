@@ -90,7 +90,7 @@ INSTALLED_APPS = (
     'markdown',
     'pagination',
     'sorl.thumbnail',
-    'tagging',
+    'taggit',
 
 )
 
