@@ -4,3 +4,4 @@ tmp/*
 *.pyo
 *.db
 static/cache/
+conf/settings_local.py
