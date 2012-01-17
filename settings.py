@@ -1,10 +1,17 @@
 # Django settings for project project.
 import os
+import sys
 
-PROJECT_PATH = os.path.realpath(os.path.dirname(__file__))
+ugettext = lambda s: s
+
+def rel(*x):
+    return os.path.join(os.path.abspath(os.path.dirname(__file__)), *x)
+
+sys.path.insert(0, rel('apps'))
 
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
+DEFAULT_CHARSET = 'utf-8'
 
 ADMINS = (
     #('zae', 'sinezub@yandex.ru'),
@@ -12,18 +19,23 @@ ADMINS = (
 
 MANAGERS = ADMINS
 SERVER_EMAIL = 'errors@rpoject.local'
+
 TIME_ZONE = 'Europe/Moscow'
 LANGUAGE_CODE = 'ru'
+
 SITE_ID = 1
 USE_I18N = True
+USE_L10N = True
 
-STATIC_ROOT = MEDIA_ROOT = os.path.join(PROJECT_PATH, 'static')
-MEDIA_URL = '/static/'
+STATIC_ROOT = rel('/static/')
 STATIC_URL = '/static/'
+
+MEDIA_ROOT = rel('/media/')
+MEDIA_URL = '/media/'
 ADMIN_MEDIA_PREFIX = '/static/admin/'
 
 TEMPLATE_DIRS = (
-    os.path.join(PROJECT_PATH, 'templates')
+    rel('templates')
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
@@ -77,27 +89,9 @@ INSTALLED_APPS = (
     'pagination',
     'sorl.thumbnail',
     'tagging',
-    'tinymce',
 
 )
 
-
-TINYMCE_DEFAULT_CONFIG = {
-    'theme': "advanced",
-    'plugins': "fullscreen,images,preview",
-    'theme_advanced_buttons1': "images,bold,italic,underline,formatselect,link,unlink,justifyleft,justifycenter,justifyright,pasteword,pastetext,image,|,bullist,numlist,|,undo,redo,|,preview,code,fullscreen",
-    'theme_advanced_buttons2': "",
-    'theme_advanced_buttons3': "",
-    'cleanup_on_startup': True,
-    'custom_undo_redo_levels': 10,
-    'theme_advanced_toolbar_location': "top",
-    'theme_advanced_toolbar_align': "left",
-    'theme_advanced_statusbar_location': "bottom",
-    'theme_advanced_resizing': True,
-    'language': "ru",
-    'external_image_list_url': 'images/',
-    'external_link_list_url': 'links/',
-}
 
 MARKITUP_FILTER = ('markdown.markdown', {'safe_mode': True})
 MARKITUP_AUTO_PREVIEW = 'auto_preview'
@@ -105,8 +99,6 @@ MARKITUP_SET = 'markitup/sets/markdown'
 MARKITUP_SKIN = 'markitup/skins/simple'
 
 ADMIN_TOOLS_INDEX_DASHBOARD = 'conf.dashboard.CustomIndexDashboard'
-
-SPHINX_API_VERSION = 0x116
 
 DEFAULT_FROM_EMAIL = 'no-reply@zaebee.ru'
 
