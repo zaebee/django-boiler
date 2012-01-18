@@ -29,10 +29,14 @@ SITE_ID = 1
 USE_I18N = True
 USE_L10N = True
 
-STATIC_ROOT = rel('/static/')
+STATIC_ROOT = rel('static')
 STATIC_URL = '/static/'
 
-MEDIA_ROOT = rel('/media/')
+STATICFILES_DIRS = (
+    rel('static'),
+)
+
+MEDIA_ROOT = rel('media')
 MEDIA_URL = '/media/'
 ADMIN_MEDIA_PREFIX = '/static/admin/'
 
@@ -91,7 +95,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.sessions',
     'django.contrib.sites',
-    'django.contrib.staticfiles',
+    #'django.contrib.staticfiles',
 
     'ajax_validation',
     'django_extensions',
@@ -115,6 +119,8 @@ MARKITUP_SKIN = 'markitup/skins/simple'
 ADMIN_TOOLS_INDEX_DASHBOARD = 'conf.dashboard.CustomIndexDashboard'
 
 DEFAULT_FROM_EMAIL = 'no-reply@zaebee.ru'
+
+LESS_PATH = rel('static/less/bin/lessc')
 
 
 if isfile(rel('conf/settings_local.py')):

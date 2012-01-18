@@ -5,4 +5,5 @@ tmp/*
 *.pyo
 *.db
 static/cache/
+static/.webassets-cache/
 conf/settings_local.py
