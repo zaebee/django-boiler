@@ -32,6 +32,14 @@
     </style>
   {% endassets %}
 
+  {% assets "bootstrap_less" %}
+    <style type="text/css" media="screen">
+        /* <![CDATA[ */
+        @import '{{ ASSET_URL }}';
+        /* ]]> */
+    </style>
+  {% endassets %}
+
   {% block extracss %}{% endblock extracss %}
 
   <script src="{{ STATIC_URL }}js/libs/modernizr-2.0.min.js"></script>
@@ -68,6 +76,12 @@
       <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
       <script>!window.jQuery && document.write(unescape('%3Cscript src="{{ STATIC_URL }}js/libs/jquery-1.7.1.min.js"%3E%3C/script%3E'))</script>
     {% endblock js-libs %}
+
+    {% assets  "bootstrap_js" %}
+      <script type="text/javascript" language="javascript" src="{{ ASSET_URL }}" charset="utf-8">
+          // <![CDATA[// ]]>
+      </script>
+    {% endassets %}
 
     {% assets  "all_js" %}
       <script type="text/javascript" language="javascript" src="{{ ASSET_URL }}" charset="utf-8">

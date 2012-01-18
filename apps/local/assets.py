@@ -21,7 +21,7 @@ register('bootstrap_js',
 
 
 #CSS
-register('less',
+register('bootstrap_less',
         Bundle('css/less/bootstrap.less',
         filters='less, cssmin',
         output='cache/bootstrap.css',
