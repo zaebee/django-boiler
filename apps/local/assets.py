@@ -30,9 +30,7 @@ register('bootstrap_less',
 
 
 register('all_css',
-        Bundle('css/base.css',
-               'css/form.css',
-               'css/style.css',
-               'css/humanmsg.css',),
+        Bundle('css/form.css',
+               'css/style.css',),
         filters='cssmin',
         output='cache/packed.css')
