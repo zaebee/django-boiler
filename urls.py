@@ -12,7 +12,8 @@ urlpatterns = patterns('',
 )
 
 urlpatterns += patterns('django.views.generic.simple',
-    (r'^$', 'direct_to_template', {'extra_context': {'section': 'main'}, 'template': 'base.html'}),
+    (r'^$', 'direct_to_template', {'extra_context': {'section': 'main'}, 'template': 'default.html'}),
+    (r'^fluid/$', 'direct_to_template', {'extra_context': {'section': 'main'}, 'template': 'fluid.html'}),
 )
 
 if settings.DEBUG:

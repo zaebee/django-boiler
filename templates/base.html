@@ -47,39 +47,15 @@
 <body>
   {% spaceless %}
 
-  <div class="topbar">
-    <div class="fill">
-      <div class="container">
-        <a class="brand" href="/">Zaebee.ru</a>
-        <ul class="nav">
-          <li class="active"><a href="#">Главная</a></li>
-          <li><a href="#news">Новости</a></li>
-          <li><a href="#product">Продукция</a></li>
-          <li><a href="#contact">Контакты</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
+  {% include 'include/main_nav.html' %}
 
-  <div class="container">
-    <div class="sidebar">
-      <div class="well">
-        <h3>Последние новости</h3>
-        {% block sidebar %}{% endblock %}
-      </div></div>
-    
-      <div class="content">
-      {% block content %}
-      <h2>Тестирование веб-сайтов</h2>
+  <div class="{% block container_class %}container{% endblock %}">
+    {% block container %}
+    {% endblock %}
 
-      <p>Самый главный подводный айсберг тестирования Django-проектов заключается в том, что недостаточно написать тесты для питонокода. Разваливается верстка, JavaScript живет своей жизнью, веб-сервер не выдержал нагрузки и превратился в тыкву — все эти вещи выявить при помощи тестирования несколько сложнее, чем отследить неверный результат функции.</p>
-
-      <p>Поэтому проверка работоспособности веб-сайта — это обычно сложное явление, состоящее из нескольких независимых наборов тестов, часть которых (проверка внешнего вида в различных браузерах, например) может предполагать участие оператора. При отсутствии отдела QA роль тестировщика нередко возлагают на конечного пользователя, который потом всячески ругается. Так делать неправильно.</p>
-      {% endblock %}
-        <footer class="wrapper">
-          <p>&copy;</p>
-        </footer>
-      </div>
+    <footer class="wrapper">
+      <p>&copy;</p>
+    </footer>
   </div>
 
     {% block js-libs %}
