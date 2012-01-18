@@ -4,6 +4,7 @@ tmp/*
 *.pyc
 *.pyo
 *.db
-static/cache/
+static/cache/*.css
+static/cache/*.js
 static/.webassets-cache/
 conf/settings_local.py

@@ -120,7 +120,7 @@ ADMIN_TOOLS_INDEX_DASHBOARD = 'conf.dashboard.CustomIndexDashboard'
 
 DEFAULT_FROM_EMAIL = 'no-reply@zaebee.ru'
 
-LESS_PATH = rel('static/less/bin/lessc')
+LESS_PATH = rel('bin/less/bin/lessc')
 
 
 if isfile(rel('conf/settings_local.py')):
