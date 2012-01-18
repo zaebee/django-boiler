@@ -4,7 +4,7 @@ from django_assets import Bundle, register
 register('all_js',
         Bundle('js/main-form.js',
                'js/script.js',),
-        filter='jsmin',
+        filters='jsmin',
         output='cache/packed.js')
 
 #CSS
@@ -13,5 +13,5 @@ register('all_css',
                'css/form.css',
                'css/style.css',
                'css/humanmsg.css',),
-        filter='cssmin',
+        filters='cssmin',
         output='cache/packed.css')

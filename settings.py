@@ -91,6 +91,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.sessions',
     'django.contrib.sites',
+    'django.contrib.staticfiles',
 
     'ajax_validation',
     'django_extensions',
