@@ -1,4 +1,5 @@
 #DEBUG = False
+ASSETS_DEBUG = True
 
 DATABASES = {
     'default': {

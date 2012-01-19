@@ -12,10 +12,10 @@ register('bootstrap_js',
                'js/bootstrap/bootstrap-buttons.js',
                'js/bootstrap/bootstrap-dropdown.js',
                'js/bootstrap/bootstrap-modal.js',
-               'js/bootstrap/bootstrap-popover.js',
                'js/bootstrap/bootstrap-scrollspy.js',
                'js/bootstrap/bootstrap-tabs.js',
-               'js/bootstrap/bootstrap-twipsy.js',),
+               'js/bootstrap/bootstrap-twipsy.js',
+               'js/bootstrap/bootstrap-popover.js',),
         filters='jsmin',
         output='cache/bootstrap.js')
 
@@ -29,8 +29,9 @@ register('bootstrap_less',
         )
 
 
-register('all_css',
-        Bundle('css/form.css',
-               'css/style.css',),
-        filters='cssmin',
-        output='cache/packed.css')
+register('dev_less',
+        Bundle('css/less/style.less',
+        filters='less, cssmin',
+        output='cache/dev.css',
+        debug=False),
+        )
