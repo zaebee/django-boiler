@@ -97,15 +97,22 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     #'django.contrib.staticfiles',
 
+    'local',
+
+    #libs
     'ajax_validation',
+    'compressor',
     'django_extensions',
     'django_assets',
     'djangosphinx',
-    'local',
+    'fiber',
     'markitup',
     'markdown',
+    'mptt',
     'pagination',
+    'piston',
     'sorl.thumbnail',
+    'south',
     'taggit',
 
 )
@@ -121,6 +128,25 @@ ADMIN_TOOLS_INDEX_DASHBOARD = 'conf.dashboard.CustomIndexDashboard'
 DEFAULT_FROM_EMAIL = 'no-reply@zaebee.ru'
 
 LESS_PATH = rel('bin/less/bin/lessc')
+
+#fiber settings
+import django.conf.global_settings as DEFAULT_SETTINGS
+
+MIDDLEWARE_CLASSES = DEFAULT_SETTINGS.MIDDLEWARE_CLASSES + (
+    'fiber.middleware.ObfuscateEmailAddressMiddleware',
+    'fiber.middleware.AdminPageMiddleware',
+    'fiber.middleware.PageFallbackMiddleware',
+)
+
+TEMPLATE_CONTEXT_PROCESSORS = DEFAULT_SETTINGS.TEMPLATE_CONTEXT_PROCESSORS + (
+    'fiber.context_processors.page_info',
+)
+
+FIBER_DEFAULT_TEMPLATE = 'base.html'
+FIBER_TEMPLATE_CHOICES = [
+    'default.html',
+    'fluid.html'
+]
 
 
 if isfile(rel('conf/settings_local.py')):

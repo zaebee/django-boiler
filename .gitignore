@@ -4,6 +4,7 @@ tmp/*
 *.pyc
 *.pyo
 *.db
+media/*
 static/cache/*.css
 static/cache/*.js
 static/.webassets-cache/
