@@ -1,8 +1,14 @@
 {% extends 'base.html' %}
+{% load fiber_tags %}
+{% block title %}{{ fiber_page.title }}{% endblock %}
+
 {% block container_class %}container-fluid{% endblock %}
 {% block container %}
   <div class="sidebar">
     {% block sidebar %}
+      {% show_page_content "aside" %}
+
+      {% show_content "address" %}
       <div class="well">
         <h3>Последние новости</h3>
       </div>
@@ -11,6 +17,7 @@
   
   <div class="content">
     {% block content %}
+    {% show_page_content "main" %}
     <h2>Тестирование веб-сайтов</h2>
 
     <p>Самый главный подводный айсберг тестирования Django-проектов заключается в том, что недостаточно написать тесты для питонокода. Разваливается верстка, JavaScript живет своей жизнью, веб-сервер не выдержал нагрузки и превратился в тыкву — все эти вещи выявить при помощи тестирования несколько сложнее, чем отследить неверный результат функции.</p>
