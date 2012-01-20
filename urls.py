@@ -19,6 +19,12 @@ urlpatterns += patterns('django.views.generic.simple',
     (r'^fluid/$', 'direct_to_template', {'extra_context': {'section': 'main'}, 'template': 'fluid.html'}),
 )
 
+#rosetta urls
+if 'rosetta' in settings.INSTALLED_APPS:
+    urlpatterns += patterns('',
+        (r'^rosetta/', include('rosetta.urls')),
+)
+
 if settings.DEBUG:
     urlpatterns += patterns('',
         (r'^static/(?P<path>.*)', 'django.views.static.serve', {'document_root':settings.STATIC_ROOT,'show_indexes': True}),

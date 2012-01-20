@@ -5,7 +5,7 @@
 <!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]--><head>
 	<meta charset="UTF-8" />
-  {% load assets %}
+  {% load assets fiber_tags %}
 	
   <title>Сайт нашей компании | {% block title %}{% endblock %}</title>
 
@@ -53,10 +53,10 @@
     {% block container %}
     {% endblock %}
 
-    <footer class="wrapper">
-      <p>&copy;</p>
-    </footer>
   </div>
+    <footer class="wrapper container-fluid">
+      {% show_page_content "footer" %}
+    </footer>
 
     {% block js-libs %}
       <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>

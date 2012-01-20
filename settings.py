@@ -1,6 +1,7 @@
 # Django settings for project project.
 import os
 import sys
+from django.utils.translation import ugettext_lazy as _
 
 from genericpath import isfile
 
@@ -115,6 +116,7 @@ INSTALLED_APPS = (
     'mptt',
     'pagination',
     'piston',
+    'rosetta',
     'sorl.thumbnail',
     'south',
     'taggit',
@@ -134,10 +136,11 @@ DEFAULT_FROM_EMAIL = 'no-reply@zaebee.ru'
 LESS_PATH = rel('bin/less/bin/lessc')
 
 #fiber settings
-FIBER_DEFAULT_TEMPLATE = 'fluid.html'
+FIBER_DEFAULT_TEMPLATE = 'default.html'
 FIBER_TEMPLATE_CHOICES = [
-    ('default.html', 'default'),
-    ('fluid.html', 'fluid'),
+    ('default.html', _('default')),
+    ('fluid.html', _('fluid')),
+    ('main.html', _('main')),
 ]
 
 
