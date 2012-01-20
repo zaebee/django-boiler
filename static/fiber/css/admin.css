@@ -203,7 +203,6 @@ ins.jstree-icon {
 .jstree {
 	border: 0;
 	background: transparent;
-	overflow-x: hidden;
 }
 
 #df-wpr-sidebar .jstree ul ul,
