@@ -1,6 +1,7 @@
 body div#wpr-body {
 	position: relative;
 	left: 10px;
+    height: 100%;
 }
 
 body.df-sidebar div#wpr-body {
