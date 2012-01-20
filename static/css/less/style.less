@@ -5,8 +5,15 @@
 .clearfix:after { clear: both; }
 .clearfix { zoom: 1; }
 
-body {
-    padding-top:60px;
+body, html {
+    position:relative;
+    height:100%;
+}
+
+.content-wrapper {
+    height: 100%;
+    margin-bottom: -135px;
+    margin-top:60px;
 }
 
 .submenu {
@@ -33,4 +40,5 @@ body {
 }
 
 footer.wrapper {
+    height:100px;
 }
