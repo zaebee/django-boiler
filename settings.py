@@ -63,6 +63,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "django.core.context_processors.media",
     "django.core.context_processors.static",
     'fiber.context_processors.page_info',
+    'local.context_processors.get_site_name',
 )
 
 TEMPLATE_LOADERS = (
