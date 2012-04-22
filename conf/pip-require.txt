@@ -9,7 +9,7 @@ django-appconf==0.4.1
 django-compressor==1.1.2
 django-debug-toolbar==0.8.4
 django-extensions==0.6
-django-fiber==0.9.5.2
+django-fiber==0.9.6.6
 django-inplaceedit==0.79
 django-markdown==0.1.0
 django-markitup==0.6.1
