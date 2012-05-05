@@ -21,17 +21,9 @@ register('bootstrap_js',
 
 
 #CSS
-register('bootstrap_less',
-        Bundle('css/less/bootstrap.less',
-        filters='less, cssmin',
-        output='cache/bootstrap.css',
-        debug=False),
-        )
-
-
-register('dev_less',
-        Bundle('css/less/style.less',
-        filters='less, cssmin',
-        output='cache/dev.css',
-        debug=False),
-        )
+register('all_css',
+        Bundle(
+               'css/form.css',
+               'css/style.css',),
+        filters='cssmin',
+        output='cache/packed.css')

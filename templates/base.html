@@ -24,15 +24,7 @@
     <link rel="apple-touch-icon" href="{{ STATIC_URL }}apple-touch-icon.png">
   {% endblock favicons %}
 	
-  {% assets "bootstrap_less" %}
-    <style type="text/css" media="screen">
-        /* <![CDATA[ */
-        @import '{{ ASSET_URL }}';
-        /* ]]> */
-    </style>
-  {% endassets %}
-
-  {% assets "dev_less" %}
+  {% assets "all_css" %}
     <style type="text/css" media="screen">
         /* <![CDATA[ */
         @import '{{ ASSET_URL }}';

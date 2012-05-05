@@ -82,7 +82,6 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
     'fiber.middleware.ObfuscateEmailAddressMiddleware',
     'fiber.middleware.AdminPageMiddleware',
-    'fiber.middleware.PageFallbackMiddleware',
 )
 
 ROOT_URLCONF = 'urls'
